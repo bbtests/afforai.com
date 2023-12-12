@@ -13,3 +13,11 @@
     transition-duration: .2s;
 
 }
+
+.container-fluid {
+    padding: 0 16px;
+
+    @include media() {
+        padding: 0 60px;
+    }
+}
