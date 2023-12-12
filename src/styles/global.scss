@@ -23,6 +23,7 @@
     text-decoration: none;
     text-align: inherit;
     text-size-adjust: 100%;
+    font-family: inherit;
 }
 
 :root {
@@ -53,12 +54,20 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: linear-gradient(90deg, #eee, #eee);
+    background: #fafafa;
     font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, NotoColorEmojiLimited, Segoe UI Emoji, Segoe UI Symbol;
+    width: 100%;
     margin: 0;
 }
 
 a {
     text-decoration: none;
+}
+
+footer {
+    a {
+        font-size: 12px;
+    }
 }
 
 h1,
@@ -74,6 +83,40 @@ h6 {
     margin-top: 0;
 }
 
+h1 {
+    font: {
+        weight: 600;
+        size: 32px
+    }
+
+    max-width: 500px !important;
+
+    @include media($android) {
+        font-size: 40px;
+    }
+
+    @include media() {
+        font-size: 48px;
+        max-width: 600px !important;
+    }
+}
+
+h2 {
+    font: {
+        weight: 600;
+        size: 28px
+    }
+
+    @include media($android) {
+        font-size: 30px;
+    }
+
+    @include media() {
+        font-size: 36px;
+        max-width: 600px !important;
+    }
+}
+
 hr {
     border: 0;
     border-top: 1px solid;
@@ -84,8 +127,20 @@ hr {
 
 img {
     // vertical-align: middle;
-    display: block;
-    margin: 0 auto;
-    border: 0;
     -ms-interpolation-mode: bicubic;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+    border: 0;
+    max-width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+swiper-slide {
+    width: auto;
+    height: auto;
+    padding: 20px 0;
 }

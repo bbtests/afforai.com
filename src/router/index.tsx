@@ -1,8 +1,8 @@
-import { lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useRouteError } from "react-router-dom";
 import { AuthRoutes } from "./routes/auth";
 import Error404 from "pages/error404";
+import Home from "pages";
 
 
 export function ErrorElement() {
@@ -10,9 +10,6 @@ export function ErrorElement() {
   console.error(error);
   return <div>Dang!</div>;
 }
-
-const Home = lazy(() => import('pages'));
-
 
 const routes = [
   {

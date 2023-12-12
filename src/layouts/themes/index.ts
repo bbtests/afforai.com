@@ -14,6 +14,7 @@ declare module "@mui/material/styles" {
     lgm: true;
     xlm: true;
   }
+
   interface ThemeOptions {
     breakpoints?: {
       values?: {
@@ -32,9 +33,11 @@ declare module "@mui/material/styles" {
     };
   }
 
+  interface Palette {
+    tertiary: SimplePaletteColorOptions;
+  }
   interface PaletteOptions {
-    gradient?: SimplePaletteColorOptions;
-    tertiary?: SimplePaletteColorOptions;
+    tertiary: SimplePaletteColorOptions;
   }
 }
 const useTheme = () => {
@@ -60,13 +63,28 @@ const useTheme = () => {
         palette: {
           primary: {
             main: "#222",
+            light: "#525252",
+            dark: "#111111",
           },
           secondary: {
             main: "#7e35fe",
+            light:"#8036ff",
+          },
+          background: {
+            default: "#fafafa",
+            paper: "#fafafa80",
+          },
+          tertiary: {
+            main: "#d1d5db",
+            light: "#e6e6e6",
           },
           success: {
             main: "#03cc3b",
           },
+        },
+        typography: {
+          fontFamily:
+            "Manrope, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, NotoColorEmojiLimited, Segoe UI Emoji, Segoe UI Symbol",
         },
       }),
     []

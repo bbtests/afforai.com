@@ -5,10 +5,6 @@ import Login from 'pages/auth/login';
 import ForgotPassword from 'pages/auth/forgot_password';
 import Signup from 'pages/auth/signup';
 
-// const Login = lazy(() => import('pages/auth/login'));
-// const ForgotPassword = lazy(() => import('pages/auth/forgot_password'));
-// const Signup = lazy(() => import('pages/auth/signup'));
-
 
 export const AuthRoutes = {
   path: "",
