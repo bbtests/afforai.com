@@ -1,5 +1,9 @@
 import { useMemo } from "react";
-import { createTheme, useMediaQuery } from "@mui/material";
+import {
+  createTheme,
+  SimplePaletteColorOptions,
+  useMediaQuery,
+} from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {
@@ -27,6 +31,11 @@ declare module "@mui/material/styles" {
       };
     };
   }
+
+  interface PaletteOptions {
+    gradient?: SimplePaletteColorOptions;
+    tertiary?: SimplePaletteColorOptions;
+  }
 }
 const useTheme = () => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: light)");
@@ -46,6 +55,17 @@ const useTheme = () => {
             lgm: 1350,
             xl: 1536,
             xlm: 1980,
+          },
+        },
+        palette: {
+          primary: {
+            main: "#222",
+          },
+          secondary: {
+            main: "#7e35fe",
+          },
+          success: {
+            main: "#03cc3b",
           },
         },
       }),

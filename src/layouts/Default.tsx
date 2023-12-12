@@ -1,4 +1,4 @@
-import { ReactNode, Suspense, useState } from "react";
+import { ReactNode, Suspense, useEffect, useState } from "react";
 import Loader from "./loader";
 import Logo from "images/graphics/logo-new-violet.webp"
 import { Typography } from "@mui/material"
@@ -8,6 +8,7 @@ import Menu from '@mui/icons-material/Menu';
 import Sputnikatx from "images/logos/sputnikatx.png"
 interface DefaultProps {
     children: ReactNode;
+    title?: string;
 }
 
 
@@ -101,8 +102,13 @@ const Footer = (): JSX.Element => {
 }
 
 
-export default function Default({ children }: DefaultProps): JSX.Element {
-
+export default function Default({ children, title }: DefaultProps): JSX.Element {
+    useEffect(() => {
+        if (title) document.title = `${title}`
+        return () => {
+            document.title = 'Afforai - Research anything with an AI assistant';
+        };
+    }, [title]);
     return <>
         <Header />
         <Typography component={"main"} className="mt-5">

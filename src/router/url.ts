@@ -11,6 +11,7 @@ export const url = {
   documentation: "/documentation",
   pricing: "/pricing",
   privacy_policy: "/privacy_policy",
+  security: "/security",
   terms_of_use: "/terms_of_use",
   api: {
     login: "/signin",
@@ -24,6 +25,7 @@ export const url = {
     facebook: "//www.facebook.com/groups/afforai",
     helpCenter: "//help.afforai.com",
     linkedin: "//linkedin.com/company/afforai/",
+    lifetime_access: "//appsumo.8odi.net/3eR3xn",
     medium: "//medium.com/@alec-afforai",
     our_story: "/our_story",
     product_hunt:
