@@ -39,15 +39,21 @@ export default function Home(): JSX.Element {
     const isMobile = useMediaQuery('(max-width:992px)');
     return <>
         <Layout>
-            <Typography component={"section"} className="container-fluid d-flex flex-column mb-5 px-lg-5">
+            <Typography component={"section"} my={15} className="container-fluid d-flex flex-column mb-5 px-lg-5">
                 <Typography sx={{}} component={"div"} className="row d-flex flex-column align-items-center mt-5 text-md-center" >
                     <Typography component={"div"}>
-                        <Chip className="col-12 col-md-auto bg-orange " sx={{ borderRadius: 3, p: "6px 6px 6px 10px", height: "fit-content", "& *": { borderRadius: 0 } }} label={<div className="d-flex justify-content-center align-items-center gap-2">
-                            <div><img className="w-50" src={Appsumo} alt="Appsumo" /></div>
-                            <span>Now on AppSumo</span>
+                        <Chip className="col-12 col-md-auto bg-orange " sx={{
+                            borderRadius: 3,
+                            border: "2px solid #333333",
+                            p: "6px 6px 6px 10px", height: "fit-content", "& *": { borderRadius: 0 }
+                        }} label={<div className="d-flex justify-content-center align-items-center gap-1">
+                            <Typography sx={{ width: "26px" }}><img src={Appsumo} alt="Appsumo" /></Typography>
+                            <Typography component={"small"} sx={{ fontWeight: 600, fontSize: 13 }}>Now on AppSumo</Typography>
                             <MUILink to={url.external.lifetime_access} component={Link} sx={{
-                                padding: "6px 2px 6px 6px", gap: "2px",
+                                padding: "2px 2px 2px 6px", gap: "2px",
                                 textDecoration: "none",
+                                fontWeight: 600,
+                                fontSize: 13,
                                 borderRadius: "6px", border: "1px solid rgb(51, 51, 51)",
                                 background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50.04%, rgba(255, 255, 255, 0.5) 50.85%)"
                             }}
@@ -59,7 +65,7 @@ export default function Home(): JSX.Element {
 
                         </div>} />
                     </Typography>
-                    <h1 className="col-md-9 mt-4">Your second brain for maximizing productivity</h1>
+                    <h1 className="col-md-9 mt-4 text-center">Your second brain for maximizing productivity</h1>
                     <Typography component={"div"} className="mb-3 col-md-9 col-xl-7" >
                         Afforai is an AI chatbot that searches, summarizes, and translates info from multiple sources to produce trustworthy research. Feed lengthy research documents to stacks of dry compliance requirements and extract the key findings you need.
                     </Typography>
@@ -94,7 +100,11 @@ export default function Home(): JSX.Element {
                                                         <CheckOutlinedIcon />
                                                         {slide}
                                                     </>
-                                                } sx={{ borderRadius: 1 }} />
+                                                } sx={{
+                                                    borderRadius: 1,
+                                                    background: (theme) => `${theme.palette.background.default}`,
+                                                    border: (theme) => `1px solid ${theme.palette.tertiary.light}`,
+                                                }} />
                                             </swiper-slide>
                                         ))
                                     }

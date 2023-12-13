@@ -142,7 +142,7 @@ export default function Default({ children, title }: DefaultProps): JSX.Element 
     }, [title]);
     return <>
         <Header />
-        <Typography component={"main"} className="mt-5">
+        <Typography component={"main"} className="mt-5 d-flex flex-column align-items-center overflow-hidden">
             <Suspense fallback={<Loader />}>
                 {children}
             </Suspense>
